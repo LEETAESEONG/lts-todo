@@ -8,7 +8,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AllMyWorks from "pages/all-my-works";
 import AllMyTodos from "pages/all-my-todos";
 import AllMyDones from "pages/all-my-dones";
-import CreateTodo from "pages/create-todo";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
