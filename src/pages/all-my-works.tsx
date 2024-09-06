@@ -1,6 +1,6 @@
 const AllMyWorks = () => {
   return (
-    <div>
+    <div className="size-full">
       <p>all my works</p>
     </div>
   );

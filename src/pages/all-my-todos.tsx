@@ -1,6 +1,6 @@
 const AllMyTodos = () => {
   return (
-    <div>
+    <div className="size-full">
       <p>all my todos</p>
     </div>
   );

@@ -1,4 +1,4 @@
 const CreateTodo = () => {
-  return <div></div>;
+  return <div className="size-full"></div>;
 };
 export default CreateTodo;
