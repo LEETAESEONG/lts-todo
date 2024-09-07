@@ -1,46 +1,79 @@
-# Getting Started with Create React App
+# 실행 방법
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. node 버전 확인 (v20.12.1)
 
-## Available Scripts
+```bash
+node -v
+```
 
-In the project directory, you can run:
+2. 버전이 다른 경우
 
-### `npm start`
+- [nvm설치 및 사용법](https://sound-programming.tistory.com/186)
+- 해당 링크에서 nvm을 가지고 version을 v20.12.1로 맞춘다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+3. 버전이 같은 경우
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- node_modules 설치
 
-### `npm test`
+```bash
+npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 실행
 
-### `npm run build`
+```bash
+npm run start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Ant-Design 컴포넌트 사용 내역
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 공통 사용
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. FloatButton
+   - navigation으로 사용
+   - 화면 전환
+2. Button
+3. Icon
+   - icon이 필요한 곳에 사용
+4. Checkbox
+5. Tooltip
+6. Message
+7. Modal
+8. Spin
 
-### `npm run eject`
+### All My Works (Main Page)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+15. Empty
+16. Statistic
+17. Timeline
+18. Progress
+19. Transfer
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### All My Todos
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+15. Empty
+16. Table
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### All My Dones
 
-## Learn More
+15. Empty
+16. Table
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Create Todo
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. DatePicker
+6. Form
+7. Input
+8. Rate
+9. TimePicker
+10. TimePicker
+11. Upload
+
+### My Calendar
+
+13. Calendar
+
+### Todo Detail
+
+14. Descriptions
+15. Image

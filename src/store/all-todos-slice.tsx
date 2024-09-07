@@ -14,11 +14,17 @@ export type TodoType = {
   content: string; // 내용
   startDate: string; // 시작 날짜
   endDate: string; // 끝 날짜
-  upload: FileType; // 이미지 업로드
+  upload?: FileType; // 이미지 업로드
 };
 
 interface CreateTodoAction {
   todo: TodoType;
+}
+
+export interface AllTodosState {
+  allTodos: {
+    todos: TodoType[];
+  };
 }
 
 const allTodosSlice = createSlice({

@@ -1,17 +1,28 @@
+// react-router-dom
 import { Outlet, useNavigate } from "react-router-dom";
+
+// icons
 import {
   SmileFilled,
   FileAddOutlined,
   HomeOutlined,
   CheckOutlined,
   OrderedListOutlined,
+  CalendarOutlined,
+  PlusOutlined,
 } from "@ant-design/icons";
+
+// components
 import { FloatButton } from "antd";
+
+// utils
+import { addTodos } from "utils/todo-utils";
+
 const App = () => {
   const navigate = useNavigate();
   return (
-    <div className="phone:px-4 tablet:px-20 desktop:px-40 min-h-screen min-w-screen">
-      <div className="w-full">
+    <div className="min-h-screen min-w-screen">
+      <div className="size-full">
         <Outlet />
         <FloatButton.Group
           trigger="click"
@@ -25,6 +36,13 @@ const App = () => {
             tooltip={<div>홈으로 이동하기</div>}
             onClick={() => {
               navigate("/");
+            }}
+          />
+          <FloatButton
+            icon={<CalendarOutlined />}
+            tooltip={<div>달력으로 보기</div>}
+            onClick={() => {
+              navigate("/calendar");
             }}
           />
           <FloatButton
@@ -46,6 +64,13 @@ const App = () => {
             tooltip={<div>완료된 일 모음</div>}
             onClick={() => {
               navigate("/dones");
+            }}
+          />
+          <FloatButton
+            icon={<PlusOutlined />}
+            tooltip={<div>임의로 할 일 추가하기</div>}
+            onClick={() => {
+              addTodos();
             }}
           />
         </FloatButton.Group>

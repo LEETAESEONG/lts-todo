@@ -15,6 +15,8 @@ import AllMyWorks from "pages/all-my-works";
 import AllMyTodos from "pages/all-my-todos";
 import AllMyDones from "pages/all-my-dones";
 import CreateTodo from "pages/create-todo";
+import MyCalendar from "pages/my-calendar";
+import TodoDetail from "pages/todo-detail";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -28,6 +30,8 @@ const router = createBrowserRouter([
       { path: "/todos", element: <AllMyTodos /> },
       { path: "/dones", element: <AllMyDones /> },
       { path: "/create", element: <CreateTodo /> },
+      { path: "/calendar", element: <MyCalendar /> },
+      { path: "/todo/:todoId", element: <TodoDetail /> },
     ],
   },
 ]);

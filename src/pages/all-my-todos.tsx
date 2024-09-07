@@ -1,7 +1,11 @@
+import Header from "components/header";
+import { ResponsivePadding } from "styles/my-style";
+
 const AllMyTodos = () => {
   return (
     <div className="size-full">
-      <p>all my todos</p>
+      <Header theme="해야 할 일" />
+      <div className={`${ResponsivePadding} size-full`}></div>
     </div>
   );
 };
