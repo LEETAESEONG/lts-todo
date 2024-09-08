@@ -75,5 +75,7 @@ npm run start
 
 ### Todo Detail
 
-14. Descriptions
+6. Form
+   - disabled 해놓고 수정할 때는 풀기
+   - 버튼 클릭하면 제출하고 수정됨
 15. Image
