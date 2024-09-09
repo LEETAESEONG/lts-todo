@@ -1,3 +1,7 @@
+# Vercel 배포
+- 해당 링크로 접속하면 설치 없이도 사용 가능합니다.
+- [lts-todo](https://lts-todo.vercel.app/todos)
+
 # 실행 방법
 
 1. node 버전 확인 (v20.12.1)
