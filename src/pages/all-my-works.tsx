@@ -23,7 +23,7 @@ const AllMyWorks = () => {
     ); // 날짜 정렬
   return (
     <div className="size-full">
-      <Header theme="일정 보기" />
+      <Header theme={`오늘 날짜: ${today}`} />
       <div className={`${ResponsivePadding} size-full`}>
         {allTodos.length === 0 ? (
           <>

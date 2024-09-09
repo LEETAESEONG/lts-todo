@@ -1,8 +1,6 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import type { GetProp, UploadProps } from "antd";
 
 // type
-type FileType = Parameters<GetProp<UploadProps, "beforeUpload">>[0];
 export type TodoType = {
   id?: number; // id
   title: string; // 제목
@@ -11,7 +9,6 @@ export type TodoType = {
   content: string; // 내용
   startDate: string; // 시작 날짜
   endDate: string; // 끝 날짜
-  upload?: FileType; // 이미지 업로드
   isDone: Boolean;
 };
 
