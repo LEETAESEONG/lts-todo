@@ -17,6 +17,7 @@ import { FloatButton } from "antd";
 
 // utils
 import { addTodos } from "utils/todo-utils";
+import Footer from "components/Footer";
 
 const App = () => {
   const navigate = useNavigate();
@@ -75,6 +76,7 @@ const App = () => {
           />
         </FloatButton.Group>
       </div>
+      <Footer />
     </div>
   );
 };

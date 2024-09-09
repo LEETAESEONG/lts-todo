@@ -5,7 +5,8 @@ import Header from "components/header";
 import { ResponsivePadding, myColors } from "styles/my-style";
 import dayjs from "dayjs";
 import { useNavigate } from "react-router-dom";
-
+// icon
+import { HomeOutlined } from "@ant-design/icons";
 const AllMyWorks = () => {
   const navigate = useNavigate();
   const today = dayjs().startOf("day"); // 오늘 날짜를 기준으로 필터링 (날짜만 비교)
@@ -23,7 +24,8 @@ const AllMyWorks = () => {
     ); // 날짜 정렬
   return (
     <div className="size-full">
-      <Header theme={`오늘 날짜: ${today}`} />
+      <Header theme={`My Todo App`} icon={<HomeOutlined />} />
+      <p className="mx-4">{`오늘 날짜: ${today}`}</p>
       <div className={`${ResponsivePadding} size-full`}>
         {allTodos.length === 0 ? (
           <>
@@ -43,7 +45,7 @@ const AllMyWorks = () => {
                       {e.endDate}
                     </p>
                   ),
-                  color: myColors[e.rate],
+                  color: e.isDone ? myColors[0] : myColors[e.rate],
                   children: (
                     <div>
                       <p

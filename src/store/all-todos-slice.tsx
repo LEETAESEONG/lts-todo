@@ -20,6 +20,9 @@ interface CreateTodoAction {
   todo: TodoType;
 }
 interface UpdateTodoAction {
+  todoIds: number[];
+}
+interface ValueUpdateAction {
   todo: TodoType;
   todoId: number;
 }
@@ -27,9 +30,8 @@ interface UpdateTodoAction {
 // state
 export interface AllTodosState {
   allTodos: {
-    todos: TodoType[];
+    todos: { [key: number]: TodoType };
     currentId: 0;
-    removeIds: number[];
     noUses: number[];
   };
 }
@@ -39,13 +41,13 @@ const allTodosSlice = createSlice({
   initialState: {
     todos: {} as { [key: number]: TodoType }, // 숫자 인덱스를 가진 객체로 정의
     currentId: 0,
-    removeIds: [],
-    noUses: [],
+    noUses: [] as number[],
   },
   reducers: {
     deleteTodos(state, action: PayloadAction<DeleteTodosAction>) {
       action.payload.deleteLists.forEach((todoId) => {
         delete state.todos[todoId];
+        state.noUses.push(todoId);
       });
     },
     createTodo(state, action: PayloadAction<CreateTodoAction>) {
@@ -67,11 +69,15 @@ const allTodosSlice = createSlice({
     deleteAll(state) {
       state.todos = {};
     },
-    updateTodo(state, action: PayloadAction<UpdateTodoAction>) {
+    updateTodos(state, action: PayloadAction<UpdateTodoAction>) {
+      const todoIds = action.payload.todoIds;
+      todoIds.forEach((e) => {
+        state.todos[e].isDone = !state.todos[e].isDone;
+      });
+    },
+    valueUpdate(state, action: PayloadAction<ValueUpdateAction>) {
       const { todoId, todo } = action.payload;
-      if (state.todos[todoId]) {
-        state.todos[todoId] = todo; // 객체에서 특정 todo 업데이트
-      }
+      state.todos[todoId] = todo;
     },
   },
 });

@@ -1,6 +1,6 @@
 import Header from "components/header";
 import { ResponsivePadding } from "styles/my-style";
-import { addOneTodo, formatDate } from "utils/todo-utils";
+import { addOneTodo, formatDate, formatTime } from "utils/todo-utils";
 
 import {
   Button,
@@ -11,6 +11,8 @@ import {
   TimePicker,
   message,
 } from "antd";
+// icon
+import { FileAddOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 
 const { RangePicker } = DatePicker;
@@ -25,7 +27,9 @@ const CreateTodo = () => {
 
     const title = formData.title;
     const deadline =
-      formData.deadline === undefined ? "00:00:00" : formData.deadline;
+      formData.deadline === undefined
+        ? "00:00:00"
+        : formatTime(formData.deadline.$d);
     const schedule = formData.schedule;
     const startDate =
       schedule === undefined ? "0000-00-00" : formatDate(schedule[0].$d);
@@ -55,6 +59,7 @@ const CreateTodo = () => {
     // 필수 값 확인 (title과 startDate)
     if (!newTodo.title || newTodo.startDate === "0000-00-00") {
       message.error("제목과 일정 선택은 필수 항목입니다.");
+      console.log(newTodo.time);
       return;
     }
 
@@ -68,7 +73,7 @@ const CreateTodo = () => {
 
   return (
     <div className="size-full">
-      <Header theme="할 일 추가하기" />
+      <Header theme="할 일 추가하기" icon={<FileAddOutlined />} />
       <div className={`${ResponsivePadding} size-full`}>
         {/* Form 컴포넌트에 form prop을 전달 */}
         <Form
@@ -96,7 +101,7 @@ const CreateTodo = () => {
           </Form.Item>
           <Form.Item className="flex justify-center">
             <Button type="primary" htmlType="submit">
-              Submit
+              생성하기
             </Button>
           </Form.Item>
         </Form>

@@ -9,6 +9,13 @@ export const formatDate = (date: Date) => {
   return `${year}-${month}-${day}`;
 };
 
+export const formatTime = (date: Date) => {
+  const hours = String(date.getHours()).padStart(2, "0");
+  const minutes = String(date.getMinutes()).padStart(2, "0");
+  const seconds = String(date.getSeconds()).padStart(2, "0");
+  return `${hours}:${minutes}:${seconds}`;
+};
+
 export const addTodos = () => {
   const numberOfTodos = prompt("몇 개의 할 일을 추가하시겠습니까?", "1");
   const count = Number(numberOfTodos);
@@ -17,13 +24,6 @@ export const addTodos = () => {
     alert("유효한 숫자를 입력해주세요.");
     return;
   }
-
-  const formatTime = (date: Date) => {
-    const hours = String(date.getHours()).padStart(2, "0");
-    const minutes = String(date.getMinutes()).padStart(2, "0");
-    const seconds = String(date.getSeconds()).padStart(2, "0");
-    return `${hours}:${minutes}:${seconds}`;
-  };
 
   const getRandomDate = () => {
     const today = new Date();
@@ -75,12 +75,27 @@ export const addTodos = () => {
 };
 
 export const addOneTodo = (todo: TodoType) => {
-  // 여기서 모달 띄우고
-  // 수락 누르면 생성
   store.dispatch(allTodosActions.createTodo({ todo }));
 };
 
-export const upDateTodo = (todoId: number, todo: TodoType) => {
-  // 수정할지 모달 띄우고
-  // 수락 누르면 수정
+export const updateTodos = (ids: React.Key[]) => {
+  const todoIds = ids.map((e) => Number(e));
+  store.dispatch(allTodosActions.updateTodos({ todoIds }));
+};
+
+export const updateOneTodo = (id: number) => {
+  store.dispatch(allTodosActions.updateTodos({ todoIds: [id] }));
+};
+
+export const deleteTodos = (ids: React.Key[]) => {
+  const deleteLists = ids.map((e) => Number(e));
+  store.dispatch(allTodosActions.deleteTodos({ deleteLists }));
+};
+
+export const deleteOneTodo = (id: number) => {
+  store.dispatch(allTodosActions.deleteTodos({ deleteLists: [id] }));
+};
+
+export const valueUpdate = (todoId: number, todo: TodoType) => {
+  store.dispatch(allTodosActions.valueUpdate({ todoId, todo }));
 };

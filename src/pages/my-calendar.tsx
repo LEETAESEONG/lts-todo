@@ -7,7 +7,8 @@ import { Badge, Calendar } from "antd";
 import dayjs, { type Dayjs } from "dayjs";
 import { useSelector } from "react-redux";
 import { AllTodosState, TodoType } from "store/all-todos-slice";
-
+// icon
+import { CalendarOutlined } from "@ant-design/icons";
 import { myColors } from "styles/my-style";
 import { useNavigate } from "react-router-dom";
 
@@ -106,7 +107,7 @@ const MyCalendar = () => {
   // 보여지는 곳
   return (
     <div className="size-full">
-      <Header theme="나의 일정" />
+      <Header theme="나의 일정" icon={<CalendarOutlined />} />
       <div className={`${ResponsivePadding} size-full`}>
         <Calendar cellRender={cellRender} />
       </div>
