@@ -1,6 +1,6 @@
 # Vercel 배포
 - 해당 링크로 접속하면 설치 없이도 사용 가능합니다.
-- [lts-todo](https://lts-todo.vercel.app/todos)
+- [lts-todo](https://lts-todo.vercel.app/)
 
 # 실행 방법
 
